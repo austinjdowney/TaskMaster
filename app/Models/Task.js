@@ -21,7 +21,7 @@ export default class Task {
         let completed = tasks.filter(t => t.completed).length
 
         return /*html*/`
-    <li class="d-flex justify-content-start"><input class="form-check-input position-static" type="checkbox" id="checkedboxes" value="option1"
+    <li class="d-flex justify-content-start"><input class="form-check-input position-static m-2" type="checkbox" id="checkedboxes" value="option1"
                         aria-label="...">${this.title} <i class="fas fa-times ml-2 text-danger"
                         onclick="app.tasksController.deleteTask('${this.id}')"></i></li>
         `

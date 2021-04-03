@@ -23,7 +23,7 @@ export default class List {
 
         return /*html*/`
 
-<div class="col-md-4">
+<div class="col-md-4 shadow rounded">
     <div class="list-card text-center shadow bg-white rounded-corners border">
         <div class="card-header" style="background-color:${this.color}">
         </div>
@@ -43,7 +43,7 @@ export default class List {
         <form class="d-flex p-2" onsubmit="app.tasksController.addTask('${this.id}')">
               <input type="text" name="title" id="tasks" class="form-control" placeholder="New Task"
                   aria-describedby="helpId" required minlength="3" maxlength="50" required>
-              <button type="submit" class="btn btn-grey" title='Add Task'><i
+              <button type="submit" class="btn btn-dark" title='Add Task'><i
                       class="fas fa-plus"></i></button>
         </form>
     </div>
