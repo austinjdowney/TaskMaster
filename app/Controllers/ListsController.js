@@ -36,9 +36,12 @@ export default class ListsController {
         //@ts-ignore
         form.reset()
     }
+
+
     deleteList(id) {
         let confirmed = window.confirm('Are you sure you want to delete this List?')
         if (confirmed) {
+            swal("DON'T BE A QUITTER")
             listsService.deleteList(id)
         }
     }

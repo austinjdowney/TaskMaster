@@ -6,6 +6,7 @@ class ListsService {
     addList(newList) {
         ProxyState.lists = [...ProxyState.lists, new List(newList.title, newList.color)]
         saveState()
+        swal("MAKING MOVES!")
     }
 
     deleteList(id) {

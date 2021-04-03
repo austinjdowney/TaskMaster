@@ -28,7 +28,7 @@ export default class List {
         <div class="card-header" style="background-color:${this.color}">
         </div>
     
-        <div class= "border p-4 d-flex justify-content-between">
+        <div class= "border p-2 d-flex justify-content-between">
             <h3> ${this.title}</h3>
             <i class="fas fa-times ml-2" onclick="app.listsController.deleteList('${this.id}')"></i>
         </div>
@@ -42,8 +42,8 @@ export default class List {
 
         <form class="d-flex p-2" onsubmit="app.tasksController.addTask('${this.id}')">
               <input type="text" name="title" id="tasks" class="form-control" placeholder="New Task"
-                  aria-describedby="helpId">
-              <button type="submit" class="btn btn-success" title='Add Task'><i
+                  aria-describedby="helpId" required minlength="3" maxlength="50" required>
+              <button type="submit" class="btn btn-grey" title='Add Task'><i
                       class="fas fa-plus"></i></button>
         </form>
     </div>

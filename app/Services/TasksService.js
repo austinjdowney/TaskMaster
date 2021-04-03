@@ -8,6 +8,7 @@ class TasksService {
         ProxyState.tasks.push(new Task(newTask.title, newTask.listId, newTask.completed))
         ProxyState.tasks = ProxyState.tasks
         saveState()
+        swal('KEEP IT GOING!!')
     }
     deleteTask(id) {
         ProxyState.tasks = ProxyState.tasks.filter(t => t.id != id)

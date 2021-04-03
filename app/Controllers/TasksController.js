@@ -27,6 +27,7 @@ export default class TasksController {
         let confirmed = window.confirm("Are you sure you want to delete this task?")
         if (confirmed) {
             tasksService.deleteTask(id)
+            swal('OH NO!!')
         }
 
     }

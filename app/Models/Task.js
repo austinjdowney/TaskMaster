@@ -22,7 +22,7 @@ export default class Task {
 
         return /*html*/`
     <li class="d-flex justify-content-start"><input class="form-check-input position-static" type="checkbox" id="checkedboxes" value="option1"
-                        aria-label="..." min="3" max="50">${this.title} <i class="fas fa-times ml-2 text-danger"
+                        aria-label="...">${this.title} <i class="fas fa-times ml-2 text-danger"
                         onclick="app.tasksController.deleteTask('${this.id}')"></i></li>
         `
     }
