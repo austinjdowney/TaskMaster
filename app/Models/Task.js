@@ -4,10 +4,11 @@ import { ProxyState } from "../Appstate.js"
 
 
 export default class Task {
-    constructor(title, listId, id = generateId()) {
+    constructor(title, listId, id = generateId(), completed) {
         this.title = title
         this.listId = listId
         this.id = id
+        this.completed = completed
     }
 
     //TODO

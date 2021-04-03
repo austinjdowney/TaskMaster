@@ -11,12 +11,14 @@ export default class List {
     //TODO
 
     get Template() {
+        let tasks = ProxyState.tasks.filter(t => t.listId === this.id)
+        let total = tasks.length
+        let completed = tasks.filter(t => t.completed).length
 
         return /*html*/`
-        
-<div class="col-md-4 mx-2">
-    <div class="list-card shadow bg-white rounded border">
-        <div div class= "text-center p-2 d-flex justify-content-between">
+<div class="col-md-4">
+    <div class="list-card text-center shadow bg-white rounded-corners border">
+        <div class= "border p-4 d-flex justify-content-between">
             <h3> ${this.title}</h3>
             <i class="fas fa-times ml-2" onclick="app.listsController.deleteList('${this.id}')"></i>
         </div>
