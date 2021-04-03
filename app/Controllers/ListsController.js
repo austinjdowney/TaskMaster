@@ -9,7 +9,7 @@ function _draw() {
     let lists = ProxyState.lists;
     let template = ''
     if (lists.length == 0) {
-        template += '<div class="col text-center"><p><em>No Tasks? What are you doing?</em><p></div>'
+        template += '<h3 class="col text-center mt-4 pt-4"><marquee behavior="alternate" scrollamount="20"><b><em>No Tasks? What are you doing?</em></b></marquee></h3>'
     }
     lists.forEach(l => template += l.Template)
     document.getElementById("lists").innerHTML = template
@@ -37,6 +37,9 @@ export default class ListsController {
         form.reset()
     }
     deleteList(id) {
-        listsService.deleteList(id)
+        let confirmed = window.confirm('Are you sure you want to delete this List?')
+        if (confirmed) {
+            listsService.deleteList(id)
+        }
     }
 }

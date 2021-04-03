@@ -1,5 +1,4 @@
 import { tasksService } from "../Services/TasksService.js";
-import { loadState } from "../Utils/LocalStorage.js";
 
 //TODO finish template and draw function?
 
@@ -12,12 +11,12 @@ export default class TasksController {
 
     addTask(listId) {
         window.event.preventDefault()
-        console.log("making");
         let form = window.event.target
         let rawTask = {
             title: form.title.value,
-            listId: listId
+            listId: listId,
         }
+
         console.log(rawTask)
         tasksService.addTask(rawTask)
         //@ts-ignore
@@ -25,6 +24,11 @@ export default class TasksController {
     }
 
     deleteTask(id) {
-        tasksService.deleteTask(id)
+        let confirmed = window.confirm("Are you sure you want to delete this task?")
+        if (confirmed) {
+            tasksService.deleteTask(id)
+        }
+
     }
 }
+

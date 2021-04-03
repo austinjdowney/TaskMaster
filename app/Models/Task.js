@@ -2,6 +2,7 @@ import { generateId } from "../Utils/GenerateId.js";
 import { ProxyState } from "../Appstate.js"
 
 
+//add completed.. this.completed
 
 export default class Task {
     constructor(title, listId, id = generateId(), completed) {
@@ -15,8 +16,12 @@ export default class Task {
 
     get Template() {
 
+        let tasks = ProxyState.tasks.filter(t => t.listId === this.id)
+        let total = tasks.length
+        let completed = tasks.filter(t => t.completed).length
+
         return /*html*/`
-    <li><input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1"
+    <li class="d-flex justify-content-start"><input class="form-check-input position-static" type="checkbox" id="checkedboxes" value="option1"
                         aria-label="..." min="3" max="50">${this.title} <i class="fas fa-times ml-2 text-danger"
                         onclick="app.tasksController.deleteTask('${this.id}')"></i></li>
         `

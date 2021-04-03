@@ -11,22 +11,35 @@ export default class List {
     //TODO
 
     get Template() {
-        let tasks = ProxyState.tasks.filter(t => t.listId === this.id)
-        let total = tasks.length
-        let completed = tasks.filter(t => t.completed).length
+
+        //REVIEW
+        //let tasks = ProxyState.tasks.filter(t => t.listId === this.id)
+        //let total = tasks.length
+        //let completed = tasks.filter(t => t.completed).length
+
+        //TODO
+        //look at checkedbox-container id. trying to get checked box
+        //to stay on refresh
 
         return /*html*/`
+
 <div class="col-md-4">
     <div class="list-card text-center shadow bg-white rounded-corners border">
+        <div class="card-header" style="background-color:${this.color}">
+        </div>
+    
         <div class= "border p-4 d-flex justify-content-between">
             <h3> ${this.title}</h3>
             <i class="fas fa-times ml-2" onclick="app.listsController.deleteList('${this.id}')"></i>
         </div>
-        <div class="p-3">
-            <ul>
+        
+        <div class="p-3 d-flex justify-content-start">
+            <ul class="d-flex flex-column" id="checkbox-container">
                 ${this.Tasks}
             </ul>
         </div>
+
+
         <form class="d-flex p-2" onsubmit="app.tasksController.addTask('${this.id}')">
               <input type="text" name="title" id="tasks" class="form-control" placeholder="New Task"
                   aria-describedby="helpId">

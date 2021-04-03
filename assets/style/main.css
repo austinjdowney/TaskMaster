@@ -10687,12 +10687,22 @@ h3 {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background-color: #f2f2f2;
+  min-height: 120vh;
+  background-image: url("../img/funny-gif-nobody-got-time-for-that.gif");
+  background-position: center;
+  background-size: cover;
 }
 
 main {
   flex-grow: 1;
+}
+
+header {
+  font-family: "Fredoka One", cursive;
+}
+
+h1 {
+  font-family: "Fredoka One", cursive;
 }
 
 /*# sourceMappingURL=main.css.map */
