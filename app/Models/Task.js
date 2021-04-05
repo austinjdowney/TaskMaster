@@ -1,5 +1,5 @@
 import { generateId } from "../Utils/GenerateId.js";
-import { ProxyState } from "../Appstate.js"
+import { ProxyState } from "../AppState.js"
 
 
 //add completed.. this.completed
