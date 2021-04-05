@@ -13,13 +13,13 @@ export default class List {
     get Template() {
 
         //REVIEW
-        //let tasks = ProxyState.tasks.filter(t => t.listId === this.id)
-        //let total = tasks.length
-        //let completed = tasks.filter(t => t.completed).length
+        let tasks = ProxyState.tasks.filter(t => t.listId === this.id)
+        let completed = tasks.filter(t => t.completed).length
 
         //TODO
         //look at checkedbox-container id. trying to get checked box
         //to stay on refresh
+        //${completed.length}/${tasks.length}
 
         return /*html*/`
 
@@ -27,7 +27,7 @@ export default class List {
     <div class="list-card text-center shadow bg-white rounded-corners border">
         <div class="card-header" style="background-color:${this.color}">
         </div>
-    
+        
         <div class= "border p-2 d-flex justify-content-between">
             <h3> ${this.title}</h3>
             <i class="fas fa-times ml-2" onclick="app.listsController.deleteList('${this.id}')"></i>
